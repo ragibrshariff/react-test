@@ -3,22 +3,23 @@ import { useEffect, useState } from "react";
 function App() {
   const [users, setUsers] = useState([]);
 
-  // useEffect(() => {
-  //   fetch("http://localhost:8000/users")
-  //     .then(res => res.json())
-  //     .then(data => setUsers(data));
-  // }, []);
+  useEffect(() => {
+    fetch("http://13.61.145.147:8000/users")
+      .then(res => res.json())
+      .then(data => setUsers(data));
+  }, []);
 
   return (
     <div style={{ padding: "2rem" }}>
       <h2>Users</h2>
-      {/* <ul>
+      <ul>
         {users.map(u => (
           <li key={u.id}>{u.name}</li>
-        ))} */}
-      {/* </ul> */}
+        ))}
+      </ul>
     </div>
   );
 }
 
 export default App;
+
